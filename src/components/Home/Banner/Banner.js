@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
+import Typewriter from 'typewriter-effect';
 import './Banner.css';
 
 const Banner = () => {
+    const typewriter = new Typewriter(null, {
+        loop: true,
+        delay: 75
+      });
     return (
         <div className='banner pt-5 pb-3'>
             <div className='container'>
@@ -11,7 +16,9 @@ const Banner = () => {
                         <div className='bannerMsg'>
                             <h4>HEY THERE!</h4>
                             <h2>I AM <span>MD RASEL</span></h2>
-                            <h3>I AM A Web Developer</h3>
+                            <h3 className='d-flex'><span className='mr-2'>I AM A  </span>
+                                <Typewriter options={{strings: [' Web Developer', ' Frontend Developer', 'Web Designer'],autoStart: true,loop: true,pauseFor:1500}}/>
+                            </h3>
                             <a href='https://drive.google.com/u/0/uc?id=1Bd9AM9aDCjD_jr6rJpa0PxY3yVR-KmBh&export=download' target='blank'><Button className='mt-3 mb-2' variant='primary'>Download Resume</Button></a>
                         </div>
                     </Col>
