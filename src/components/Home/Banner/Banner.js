@@ -1,13 +1,11 @@
+import { faFileDownload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Typewriter from 'typewriter-effect';
 import './Banner.css';
 
 const Banner = () => {
-    const typewriter = new Typewriter(null, {
-        loop: true,
-        delay: 75
-      });
     return (
         <div className='banner pt-5 pb-3'>
             <div className='container'>
@@ -19,7 +17,12 @@ const Banner = () => {
                             <h3 className='d-flex'><span className='mr-2'>I AM A  </span>
                                 <Typewriter options={{strings: [' Web Developer', ' Frontend Developer', 'Web Designer'],autoStart: true,loop: true,pauseFor:1500}}/>
                             </h3>
-                            <a href='https://drive.google.com/u/0/uc?id=1Bd9AM9aDCjD_jr6rJpa0PxY3yVR-KmBh&export=download' target='blank'><Button className='mt-3 mb-2' variant='primary'>Download Resume</Button></a>
+                            <a href='https://drive.google.com/u/0/uc?id=1Bd9AM9aDCjD_jr6rJpa0PxY3yVR-KmBh&export=download' target='blank'>
+                                <Button className='mt-3 mb-2 p-2' style={{padding:'0.8rem !important',fontSize:'20px'}} variant='primary'>
+                                    <FontAwesomeIcon style={{paddingRight:'5px',fontSize:'1.8rem'}} icon={faFileDownload} />
+                                    Download Resume
+                                </Button>
+                            </a>
                         </div>
                     </Col>
                     <Col className='bannerImg pb-2' xs={11} sm={10} md={5}>
