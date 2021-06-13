@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 
 const Blog = () => {
+
+    useEffect(() => {
+        fetch('https://dev.to/api/articles/me/all',{
+            method:'GET',
+            headers: {'api-key' : 'X5tbGjDBVmAfMjKQywvkVPHp'}
+        })
+        .then(res => res.json())
+        .then(result => console.log(result))
+    },[])
+    
     return (
         <div className='container pb-5'>
             <h3 className='text-center pageTitle'>Blogs</h3>
